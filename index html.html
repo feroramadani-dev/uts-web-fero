@@ -1,0 +1,149 @@
+
+:root{
+  --blue-1: #7600d7;
+  --blue-2: #0027a6;
+  --bg: rgba(251, 250, 249, 0.705);
+  --muted: rgb(9, 14, 8);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+}
+
+header{
+  background: linear-gradient(135deg,var(--blue-1),var(--blue-2));
+  color: rgb(244, 237, 26);
+  padding: 36px 20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+}
+
+.brand h1{
+  margin:0;
+  font-size:28px;
+  letter-spacing:0.4px;
+}
+
+.brand p{margin:4px 0 0; opacity:0.95; font-size:14px}
+
+.header-decor{
+  position:absolute;
+  right:-120px;
+  top:-40px;
+  width:400px;
+  height:400px;
+  opacity:0.12;
+  transform:rotate(20deg);
+  filter: blur(12px);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 30%), rgba(255,255,255,0.06);
+  border-radius:50%;
+}
+
+.nav{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.nav-item{
+  color:rgba(255,255,255,0.95);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:13px;
+  transition: all .2s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent);
+}
+
+.nav-item:hover{ transform:translateY(-3px); background: rgba(255,255,255,0.08) }
+
+.container{
+  max-width:1100px;
+  margin:24px auto;
+  padding:0 20px;
+}
+
+/* Layout: main content + aside */
+.content-grid{
+  display:flex;
+  gap:24px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+
+article{
+  flex: 1 1 640px;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(16,32,64,0.06);
+  animation:fadeIn .45s ease both;
+}
+
+aside{
+  width:280px;
+  min-width:240px;
+  background: linear-gradient(180deg,#f8fcff, #eaf6ff);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(16,32,64,0.04);
+  text-align:center;
+  animation:fadeIn .6s ease both;
+}
+
+.profile-img{
+  width:100%;
+  border-radius:10px;
+  display:block;
+  margin-bottom:12px;
+  object-fit:cover;
+  height:280px;
+}
+
+/* Cards for portfolio */
+.cards{display:flex;gap:16px;flex-wrap:wrap}
+.card{background:white;padding:14px;border-radius:10px;box-shadow:0 8px 18px rgba(16,32,64,0.04);flex:1 1 220px;min-width:220px;transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(16,32,64,0.08)}
+
+.card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+
+/* small details */
+.kv{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.kv .tag{background:#e8f5ff;padding:8px 10px;border-radius:20px;font-size:13px;color:var(--blue-2);font-weight:600}
+
+footer{background:var(--blue-2);color:white;padding:18px 0;margin-top:30px;text-align:center;border-top:6px solid rgba(255,255,255,0.03)}
+
+h2{margin-top:0;color:var(--blue-2)}
+
+/* responsive */
+@media (max-width:900px){
+  .content-grid{flex-direction:column}
+  aside{width:100%}
+}
+
+/* animations */
+@keyframes fadeIn{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
+
+/* small utility */
+.small{font-size:14px;color:var(--muted)}
